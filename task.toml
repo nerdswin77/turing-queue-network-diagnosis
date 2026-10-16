@@ -1,0 +1,39 @@
+schema_version = "1.4"
+artifacts = ["/root/results/solver.py"]
+
+[task]
+name = "turing/queue-network-diagnosis"
+description = "Build a reusable solver that diagnoses hidden errors of documented queueing networks (servers out of service, slowed stations, reduced station capacities, misrouted dispatch links, gross monitor readings) from steady-state monitor readings taken at several arrival levels, while the actual demand level of each period and the service productivity of the day are unknown and must be estimated jointly."
+version = "1.0.0"
+keywords = ["operations-research", "queueing-networks", "loss-networks", "inverse-problems", "model-diagnosis", "nuisance-parameters"]
+
+[metadata]
+domain = "mathematical-sciences"
+category = "operations-research"
+subcategory = "queueing network model diagnosis"
+reward_type = "binary"
+source = "Written by PhD annotators"
+public_overlap = "None"
+
+
+[verifier]
+timeout_sec = 3600
+environment_mode = "separate"
+network_mode = "no-network"
+
+
+[verifier.environment]
+network_mode = "no-network"
+cpus = 2
+memory_mb = 4096
+
+
+[agent]
+timeout_sec = 18000
+network_mode = "public"
+
+[environment]
+cpus = 2
+memory_mb = 4096
+storage_mb = 10240
+network_mode = "public"
