@@ -1,0 +1,159 @@
+{
+ "networks": {
+  "A1": {
+   "servers_down": {},
+   "slowdowns": {},
+   "buffer_cuts": {
+    "16": 3
+   },
+   "misroutes": {
+    "3": 16
+   },
+   "demand_factors": [
+    1.113,
+    0.985,
+    0.953,
+    1.206,
+    1.132,
+    0.818
+   ],
+   "service_factor": 1.018,
+   "bad_readings": [
+    [
+     2,
+     12
+    ]
+   ]
+  },
+  "A2": {
+   "servers_down": {
+    "1": 2,
+    "4": 2
+   },
+   "slowdowns": {},
+   "buffer_cuts": {},
+   "misroutes": {
+    "33": 11
+   },
+   "demand_factors": [
+    0.881,
+    0.863,
+    1.141,
+    1.122,
+    0.805,
+    1.221
+   ],
+   "service_factor": 1.052,
+   "bad_readings": [
+    [
+     0,
+     15
+    ],
+    [
+     0,
+     20
+    ]
+   ]
+  },
+  "A3": {
+   "servers_down": {
+    "13": 2
+   },
+   "slowdowns": {
+    "24": 0.714
+   },
+   "buffer_cuts": {
+    "4": 2,
+    "16": 4
+   },
+   "misroutes": {},
+   "demand_factors": [
+    0.863,
+    1.066,
+    0.819,
+    1.193,
+    1.191,
+    1.032
+   ],
+   "service_factor": 0.878,
+   "bad_readings": [
+    [
+     0,
+     25
+    ]
+   ]
+  },
+  "A4": {
+   "servers_down": {},
+   "slowdowns": {},
+   "buffer_cuts": {
+    "11": 1
+   },
+   "misroutes": {
+    "26": 11
+   },
+   "demand_factors": [
+    1.103,
+    0.994,
+    1.099,
+    0.941,
+    1.128,
+    0.966
+   ],
+   "service_factor": 1.042,
+   "bad_readings": []
+  },
+  "A5": {
+   "servers_down": {},
+   "slowdowns": {
+    "9": 0.728,
+    "15": 0.674
+   },
+   "buffer_cuts": {
+    "2": 3
+   },
+   "misroutes": {
+    "2": 9
+   },
+   "demand_factors": [
+    1.137,
+    1.158,
+    1.207,
+    1.111,
+    1.011,
+    1.177
+   ],
+   "service_factor": 0.949,
+   "bad_readings": []
+  },
+  "A6": {
+   "servers_down": {},
+   "slowdowns": {},
+   "buffer_cuts": {},
+   "misroutes": {
+    "0": 20,
+    "6": 14,
+    "22": 17
+   },
+   "demand_factors": [
+    0.854,
+    1.25,
+    0.887,
+    1.158,
+    1.246,
+    0.986
+   ],
+   "service_factor": 0.945,
+   "bad_readings": [
+    [
+     0,
+     23
+    ],
+    [
+     3,
+     33
+    ]
+   ]
+  }
+ }
+}
