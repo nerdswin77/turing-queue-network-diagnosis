@@ -1,0 +1,162 @@
+{
+ "networks": {
+  "B1": {
+   "servers_down": {},
+   "slowdowns": {
+    "12": 0.624
+   },
+   "buffer_cuts": {},
+   "misroutes": {
+    "5": 6,
+    "22": 4,
+    "40": 0
+   },
+   "demand_factors": [
+    1.179,
+    0.979,
+    1.116,
+    1.242,
+    1.083,
+    1.186
+   ],
+   "service_factor": 0.884,
+   "bad_readings": []
+  },
+  "B2": {
+   "servers_down": {},
+   "slowdowns": {
+    "4": 0.542,
+    "21": 0.63
+   },
+   "buffer_cuts": {},
+   "misroutes": {},
+   "demand_factors": [
+    0.92,
+    0.885,
+    1.07,
+    0.923,
+    1.027,
+    1.226
+   ],
+   "service_factor": 0.953,
+   "bad_readings": [
+    [
+     0,
+     23
+    ]
+   ]
+  },
+  "B3": {
+   "servers_down": {},
+   "slowdowns": {
+    "11": 0.724
+   },
+   "buffer_cuts": {},
+   "misroutes": {
+    "26": 21
+   },
+   "demand_factors": [
+    0.834,
+    0.95,
+    0.935,
+    1.161,
+    1.148,
+    1.017
+   ],
+   "service_factor": 1.041,
+   "bad_readings": [
+    [
+     2,
+     15
+    ],
+    [
+     3,
+     8
+    ]
+   ]
+  },
+  "B4": {
+   "servers_down": {},
+   "slowdowns": {
+    "11": 0.667
+   },
+   "buffer_cuts": {},
+   "misroutes": {
+    "35": 12
+   },
+   "demand_factors": [
+    0.861,
+    1.09,
+    1.14,
+    1.147,
+    0.831,
+    1.022
+   ],
+   "service_factor": 0.869,
+   "bad_readings": []
+  },
+  "B5": {
+   "servers_down": {},
+   "slowdowns": {
+    "8": 0.508,
+    "9": 0.574
+   },
+   "buffer_cuts": {},
+   "misroutes": {
+    "9": 9,
+    "20": 3
+   },
+   "demand_factors": [
+    0.863,
+    1.137,
+    1.171,
+    1.222,
+    0.831,
+    1.185
+   ],
+   "service_factor": 0.861,
+   "bad_readings": [
+    [
+     1,
+     16
+    ],
+    [
+     4,
+     1
+    ]
+   ]
+  },
+  "B6": {
+   "servers_down": {},
+   "slowdowns": {
+    "4": 0.626
+   },
+   "buffer_cuts": {
+    "5": 3
+   },
+   "misroutes": {
+    "1": 3,
+    "32": 19
+   },
+   "demand_factors": [
+    1.142,
+    0.882,
+    1.181,
+    0.93,
+    0.827,
+    1.22
+   ],
+   "service_factor": 0.868,
+   "bad_readings": [
+    [
+     1,
+     18
+    ],
+    [
+     4,
+     7
+    ]
+   ]
+  }
+ }
+}
