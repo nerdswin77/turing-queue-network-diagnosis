@@ -1,0 +1,141 @@
+{
+ "networks": {
+  "C1": {
+   "servers_down": {},
+   "slowdowns": {
+    "17": 0.562
+   },
+   "buffer_cuts": {
+    "7": 7,
+    "10": 1
+   },
+   "misroutes": {},
+   "demand_factors": [
+    0.897,
+    1.109,
+    1.12,
+    1.013,
+    1.095,
+    1.12
+   ],
+   "service_factor": 0.995,
+   "bad_readings": [
+    [
+     3,
+     9
+    ]
+   ]
+  },
+  "C2": {
+   "servers_down": {},
+   "slowdowns": {
+    "10": 0.788
+   },
+   "buffer_cuts": {
+    "15": 1
+   },
+   "misroutes": {
+    "21": 22,
+    "25": 12,
+    "26": 25
+   },
+   "demand_factors": [
+    1.226,
+    1.111,
+    1.161,
+    0.959,
+    0.889,
+    0.901
+   ],
+   "service_factor": 0.865,
+   "bad_readings": []
+  },
+  "C3": {
+   "servers_down": {},
+   "slowdowns": {
+    "6": 0.606,
+    "20": 0.546
+   },
+   "buffer_cuts": {},
+   "misroutes": {},
+   "demand_factors": [
+    1.223,
+    0.81,
+    1.023,
+    0.814,
+    1.182,
+    1.25
+   ],
+   "service_factor": 0.893,
+   "bad_readings": []
+  },
+  "C4": {
+   "servers_down": {
+    "2": 2
+   },
+   "slowdowns": {
+    "11": 0.77
+   },
+   "buffer_cuts": {},
+   "misroutes": {
+    "3": 6,
+    "20": 11,
+    "26": 23
+   },
+   "demand_factors": [
+    1.098,
+    1.053,
+    0.942,
+    1.06,
+    1.154,
+    0.909
+   ],
+   "service_factor": 0.922,
+   "bad_readings": []
+  },
+  "C5": {
+   "servers_down": {},
+   "slowdowns": {
+    "1": 0.731,
+    "13": 0.542
+   },
+   "buffer_cuts": {},
+   "misroutes": {},
+   "demand_factors": [
+    0.936,
+    1.072,
+    1.131,
+    1.234,
+    1.127,
+    1.196
+   ],
+   "service_factor": 0.936,
+   "bad_readings": [
+    [
+     1,
+     6
+    ]
+   ]
+  },
+  "C6": {
+   "servers_down": {},
+   "slowdowns": {},
+   "buffer_cuts": {},
+   "misroutes": {
+    "2": 15,
+    "17": 18,
+    "34": 7
+   },
+   "demand_factors": [
+    1.029,
+    1.019,
+    1.082,
+    0.913,
+    1.003,
+    0.941
+   ],
+   "service_factor": 0.939,
+   "bad_readings": []
+  }
+ }
+}
