@@ -1,0 +1,16 @@
+## What this models
+
+The setting is an operations audit of a service network: a call centre with skill groups and overflow paths, an emergency department with its wards and referral steps, or a fulfilment centre with its work stations. Planners keep a stored model of it (staffing, service rates, buffer sizes, routing tables, a planned arrival profile for the day) and a few monitors report what actually happened in each hour. The real day never matches the plan exactly. Demand in each hour differs from the forecast, the staff work faster or slower than the stored rates, and a handful of things are broken: a station is short of staff, one unit works slowly, a buffer has been closed off, a routing rule sends jobs somewhere else, and a monitor has reported nonsense. The job is to recover all of that from the monitor readings alone. The fault load is realistic: 2 to 5 faults in a network of 20 to 28 stations (a median of 13 percent of the stations, at most 20 percent), so most stations are healthy, and the hard part is telling a local fault from a network-wide shift and one kind of fault from another.
+
+## Difficulty
+
+Each network is a queueing network with limited room at every station. What makes the diagnosis hard is measurement science, not the number of faults.
+
+First, the level of the data is unknown. The demand factor of each period and the service factor of the day are not recorded, so the readings of a healthy station already differ from the stored model, and every fault has to be separated from these two network-wide shifts. A service factor and a slowdown both lower occupancy; the service factor moves every station by the same ratio, a slowdown moves one, and only the healthy stations pin the global factors down. A demand factor and a buffer cut both change what is lost; the demand factor changes what is offered everywhere in that period, a buffer cut the loss of one station in every period.
+
+Second, the fault kinds imitate one another. Losing one of four servers and a slowdown to 0.75 give the same capacity, and only the shape of the occupancy curve over the six arrival levels tells them apart. A smaller buffer raises the lost rate, but only once the station fills, so it shows at the heavy levels and hides at the light ones. A misrouted link sends load to a different part of the network, and its own dispatch meter can't show it, because that meter counts jobs where they leave; the misroute is seen only through the station that unexpectedly receives the load and the one that doesn't.
+
+Third, the meters are sparse: 60 percent of the stations have an occupancy meter, 20 percent an offered meter, 20 percent a lost meter, and 30 percent of the links a dispatch meter. Many faults are seen only through their effect on neighbours, and a gross reading (12 to 30 sigma off) looks like a fault at a neighbouring station unless it is tested against the whole fit. The answer must be exactly right on 18 private networks, including every demand factor within 0.05 and the service factor within 0.01, so one wrong class, one wrong cut or one missed gross reading fails the run.
+
+A default model also goes wrong in two places that the statement spells out: an infinite-buffer product-form network has no losses or blocking, and a dispatch meter doesn't measure what arrives at the link's destination.
+
