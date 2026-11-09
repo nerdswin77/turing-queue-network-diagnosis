@@ -30,3 +30,26 @@ The 18 private networks have 20 to 28 stations, 29 to 44 links and 29 to 42 mete
 
 The generation rules are all structural, and none of them calls the reference. Every margin is measured after the continuous parameters of the alternative (its slowdown factors, the six demand factors and the service factor) have been refitted, so a global shift never hides a fault. Removing any error must raise the fit cost by at least 200. Replacing one error with another, or swapping the values of two errors of the same kind, must leave a cost of at least 100. Every slowdown factor has a Fisher standard deviation of at most 0.008, every demand factor at most 0.01 and the service factor at most 0.002, computed from the full Fisher matrix of all continuous parameters. Every station is offered at least 0.5 jobs per minute. The origin, target and actual destination of misrouted links are all different stations. Ordinary readings stay within 4.5 sigma. The tolerances (0.03, 0.05 and 0.01) are about four to five times the corresponding Fisher limits.
 
+## Contested conventions
+
+Each choice below could have gone another way. The alternative and the reason it lost are given.
+
+- Dispatch meters count jobs where they leave, at the `from` station. Counting at the real destination was rejected because it would make every misroute directly visible and remove the reason to use the other meters.
+- The model is the reduced-load (fixed-point) approximation. A product-form network with infinite buffers was rejected because it has no loss or blocking, and exact finite-buffer analysis has no closed form. Simulation was rejected because it adds noise and makes the truth less repeatable.
+- The demand factor is one number per period for the whole network, and the service factor one number per network. Per-station demand factors were rejected because they are indistinguishable from the faults; a per-period service factor was rejected because a slowdown is also constant over the day and the two would only be told apart by their scope.
+- A slowdown scales every server of the station by the same factor. A slowdown of only some servers was rejected because it can't be told apart from losing servers.
+- One or two servers can be out of service, and at least one stays. A station with all servers out was rejected, since it cuts the network and the case becomes a routing question.
+- Capacity counts the jobs in service. A buffer cut must leave room for at least `servers` plus one jobs, so the station can still queue; smaller cuts were rejected because the station would then barely differ from a closed one.
+- Noise is absolute, with a fixed `sigma` per meter type, like an instrument accuracy class. Noise relative to the true value was rejected because it would make the small `lost` readings almost noiseless and the gross-reading scale ambiguous.
+- A gross reading is off by 12 to 30 sigma and every other reading by less than 4.5 sigma. Overlapping ranges were rejected because then the set of bad readings is not defined by the data.
+- A station has one error. Allowing stacks was rejected because, for example, a slowdown plus a lost server at one station can match a single other error, so no unique answer exists.
+
+| Procedure | Result |
+| --- | --- |
+| Reference solver | passes all checks |
+| The same search with the demand and service factors held at their nominal value 1 | exact on 0 of 8 fresh networks |
+| No solver, a solver that reads the truth, becomes root, writes outside the output directory, uses more than 4 GB, hangs, starts 100 threads, writes a 20 MB file, imports a missing package or imports pytest, which the verifier image holds | fails |
+| A server outage, slowdown, buffer cut, misroute or gross reading missing or added, a cut or count off by one, a slowdown off by 0.05 or outside 0.5 to 0.8, a demand factor off by 0.08 or outside its range or one short, a service factor off by 0.02 or outside its range, a station with two errors, an unsorted or out-of-range pair, a leading-zero key, a float cut, NaN, a repeated key, a missing network or an extra key | fails |
+| Slowdown factor off by 0.02, demand factor off by 0.03, service factor off by 0.005 | passes |
+| Report symlinked or hard-linked inside the output directory; multiprocessing Pool or Manager; semaphore names in `/dev/shm` | passes |
+| Directories, other names or leftover prohibited entries in `/dev/shm`, also when removed again before the exit | fails |
